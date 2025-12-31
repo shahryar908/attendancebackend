@@ -1,8 +1,8 @@
-# 📚 Live Attendance System - Backend
+#  Live Attendance System - Backend
 
 Real-time attendance tracking system with WebSocket support, JWT authentication, and role-based access control.
 
-## 🎯 Features
+##  Features
 
 - ✅ User Authentication (JWT with 1-day expiration)
 - ✅ Role-based Access Control (Teacher/Student)
@@ -12,7 +12,7 @@ Real-time attendance tracking system with WebSocket support, JWT authentication,
 - ✅ Docker Support
 - ✅ Production-Ready
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Framework**: FastAPI
 - **Database**: MongoDB
@@ -21,13 +21,13 @@ Real-time attendance tracking system with WebSocket support, JWT authentication,
 - **Containerization**: Docker (Multi-stage build)
 - **Package Manager**: uv
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Python 3.11+
 - Docker & Docker Compose
 - MongoDB Atlas account (or local MongoDB)
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Option 1: Docker (Recommended)
 
@@ -99,7 +99,7 @@ uv run uvicorn main:app --reload --port 8000
 {"event": "MY_ATTENDANCE"}
 ```
 
-## 🐳 Docker Commands
+##  Docker Commands
 
 ```bash
 # Build image
@@ -114,7 +114,7 @@ docker-compose logs -f
 docker-compose down
 ```
 
-## 📊 Database Models
+##  Database Models
 
 ### User
 ```json
@@ -147,24 +147,24 @@ docker-compose down
 }
 ```
 
-## 🔒 Security
+##  Security
 
 - Passwords hashed with bcrypt
 - JWT tokens with expiration
 - Role-based authorization
 - Input validation with Pydantic
 
-## 📝 Environment Variables
+##  Environment Variables
 
 ```env
 DB_URL=mongodb+srv://user:pass@cluster.mongodb.net/dbname
 ```
 
-## 🧪 Testing with Swagger
+##  Testing with Swagger
 
 Visit `http://localhost:8000/docs` for interactive API documentation.
 
-## 📈 Production Deployment
+##  Production Deployment
 
 ### Deploy to Render/Railway/Heroku
 
@@ -186,7 +186,7 @@ docker push your-registry/attendance-backend:prod
 docker run -d -p 8000:8000 --env-file .env your-registry/attendance-backend:prod
 ```
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create feature branch (`git checkout -b feature/amazing`)
