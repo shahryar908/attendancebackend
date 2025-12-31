@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Test Client</title>
+</head>
+<body>
+    <h1>WebSocket Echo Test</h1>
+    <p>Open browser console (F12) to see messages.</p>
+
+    <script>
+        // Step 1: Create the connection
+        const ws = new WebSocket("ws://localhost:5000/ws");
+
+        // When connection opens
+        ws.onopen = () => {
+            console.log("Connected to server!");
+            ws.send("Hello from HTML page!");  // Send first message
+        };
+
+        // When server sends something back
+        ws.onmessage = (event) => {
+            console.log("Server says:", event.data);
+        };
+
+        // Errors and close
+        ws.onerror = (error) => console.log("Error:", error);
+        ws.onclose = () => console.log("Disconnected");
+    </script>
+</body>
+</html>

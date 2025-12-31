@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_URL=${DB_URL}
+    env_file:
+      - .env
+    restart: unless-stopped
+    volumes:
+      - .:/app  # For development - remove in production
