@@ -1,17 +1,30 @@
+<<<<<<< HEAD
 # 🎓 Attendance Management System - Backend API
+=======
+#  Live Attendance System - Backend
+>>>>>>> 5efe5b437572c1e6155511f66998901e37a30a47
 
 A **production-ready, real-time attendance tracking system** built from scratch with FastAPI, featuring JWT authentication, role-based access control (RBAC), WebSocket communication, and deployed on AWS EKS.
 
+<<<<<<< HEAD
 🔗 **Live Demo**: `http://a6d4d72195a6a4ec3b59f17ba1fcdf43-1710295516.us-east-1.elb.amazonaws.com`
 🐳 **Docker Image**: `docker.io/shahryar371/attndance:v5`
 📚 **API Docs**: `/docs` (Swagger UI) | `/redoc` (ReDoc)
+=======
+##  Features
+>>>>>>> 5efe5b437572c1e6155511f66998901e37a30a47
 
 ---
 
+<<<<<<< HEAD
 ## 📋 Project Overview
+=======
+##  Tech Stack
+>>>>>>> 5efe5b437572c1e6155511f66998901e37a30a47
 
 This is a **complete end-to-end backend system** built entirely from scratch, demonstrating:
 
+<<<<<<< HEAD
 - ✅ **Authentication** - JWT tokens with bcrypt password hashing
 - ✅ **RBAC** - Role-based access control (Teacher/Student roles)
 - ✅ **HTTP REST API** - 9 RESTful endpoints with FastAPI
@@ -19,6 +32,9 @@ This is a **complete end-to-end backend system** built entirely from scratch, de
 - ✅ **Dockerization** - Multi-stage containerization
 - ✅ **Kubernetes** - Production-ready manifests with auto-scaling
 - ✅ **AWS EKS** - Deployed on managed Kubernetes cluster
+=======
+##  Prerequisites
+>>>>>>> 5efe5b437572c1e6155511f66998901e37a30a47
 
 ---
 
@@ -170,7 +186,7 @@ Seven production-ready manifests:
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Local Development
 
@@ -192,7 +208,51 @@ uvicorn main:app --reload
 open http://localhost:8000/docs
 ```
 
+<<<<<<< HEAD
 ### Docker
+=======
+## 📡 API Endpoints
+
+### Authentication
+- `POST /signup` - Register new user
+- `POST /login` - Login and get JWT token
+- `GET /me` - Get current user info
+
+### Class Management
+- `POST /class` - Create class (Teacher only)
+- `POST /class/{id}/add-student` - Add student to class
+- `GET /class/{id}` - Get class details
+- `GET /students` - List all students (Teacher only)
+
+### Attendance
+- `POST /attendance/start` - Start attendance session
+- `GET /class/{id}/my-attendance` - Check persisted attendance
+
+### WebSocket
+- `ws://localhost:8000/ws?token=<JWT>` - Real-time attendance updates
+
+## 🔌 WebSocket Events
+
+### Teacher Events (Broadcast)
+```json
+// Mark Attendance
+{"event": "ATTENDANCE_MARKED", "data": {"studentId": "123", "status": "present"}}
+
+// Get Summary
+{"event": "TODAY_SUMMARY"}
+
+// Finalize & Persist
+{"event": "DONE"}
+```
+
+### Student Events (Unicast)
+```json
+// Check Status
+{"event": "MY_ATTENDANCE"}
+```
+
+##  Docker Commands
+>>>>>>> 5efe5b437572c1e6155511f66998901e37a30a47
 
 ```bash
 # Build image
@@ -207,7 +267,69 @@ docker run -p 8000:8000 \
 curl http://localhost:8000/
 ```
 
+<<<<<<< HEAD
 ### Kubernetes (AWS EKS)
+=======
+##  Database Models
+
+### User
+```json
+{
+  "_id": "ObjectId",
+  "name": "string",
+  "email": "string",
+  "password": "hashed_string",
+  "role": "teacher | student"
+}
+```
+
+### Class
+```json
+{
+  "_id": "ObjectId",
+  "className": "string",
+  "teacherId": "ObjectId",
+  "studentIds": ["ObjectId"]
+}
+```
+
+### Attendance
+```json
+{
+  "_id": "ObjectId",
+  "classId": "ObjectId",
+  "studentId": "ObjectId",
+  "status": "present | absent"
+}
+```
+
+##  Security
+
+- Passwords hashed with bcrypt
+- JWT tokens with expiration
+- Role-based authorization
+- Input validation with Pydantic
+
+##  Environment Variables
+
+```env
+DB_URL=mongodb+srv://user:pass@cluster.mongodb.net/dbname
+```
+
+##  Testing with Swagger
+
+Visit `http://localhost:8000/docs` for interactive API documentation.
+
+##  Production Deployment
+
+### Deploy to Render/Railway/Heroku
+
+1. Connect GitHub repository
+2. Add environment variable: `DB_URL`
+3. Deploy automatically
+
+### Manual Deployment
+>>>>>>> 5efe5b437572c1e6155511f66998901e37a30a47
 
 ```bash
 # Create cluster
@@ -229,6 +351,21 @@ kubectl get svc attendence-service -n attendencenamespace
 curl http://YOUR-LOADBALANCER-URL/
 ```
 
+<<<<<<< HEAD
+=======
+##  Contributing
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing`)
+5. Open Pull Request
+
+## 📄 License
+
+MIT License
+
+>>>>>>> 5efe5b437572c1e6155511f66998901e37a30a47
 ---
 
 ## 📡 API Examples
