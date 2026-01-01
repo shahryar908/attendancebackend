@@ -2,12 +2,11 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install dependencies first (better caching)
+# Copy requirements
 COPY requirements.txt .
 
-# Upgrade pip and install dependencies with retry logic and verbose output
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir --default-timeout=300 --retries 5 -v -r requirements.txt
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY . .

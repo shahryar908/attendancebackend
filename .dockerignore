@@ -48,5 +48,8 @@ htmlcov/
 uv.lock
 pyproject.toml
 
+# Allow wheels folder for offline installation
+!wheels/
+
 # Kubernetes
 k8s/

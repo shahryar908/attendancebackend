@@ -16,7 +16,7 @@ spec:
      spec:
       containers:
       - name: attendancebackend
-        image: shahryar371/attndance:v1
+        image: shahryar371/attndance:v5
         ports:
         - containerPort: 8000
         env:

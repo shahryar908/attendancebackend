@@ -1,0 +1,6 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Simple test - just print Python version
+CMD ["python", "-c", "print('Docker is working! Python version:'); import sys; print(sys.version)"]
